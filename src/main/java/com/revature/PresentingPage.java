@@ -10,5 +10,4 @@ package com.revature;
 public interface PresentingPage 
 {
 	public void presentPage();
-	public void userActions();
 }

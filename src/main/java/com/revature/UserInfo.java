@@ -10,14 +10,29 @@ package com.revature;
 
 public class UserInfo 
 {
-	String userName;
+	String userID;
 	String userPassword;
 	String userTier;
 	
-	public UserInfo(String name, String pass, String tier)
+	public UserInfo(String ID, String pass, String tier)
 	{
-		userName = name;
+		userID = ID;
 		userPassword = pass;
 		userTier = tier;
+	}
+	
+	public void setUserID(String ID)
+	{
+		this.userID = ID;
+	}
+
+	public void setUserPassword(String pass)
+	{
+		this.userPassword = pass;
+	}
+	
+	public void setUserTier(String tier)
+	{
+		this.userTier = tier;
 	}
 }
