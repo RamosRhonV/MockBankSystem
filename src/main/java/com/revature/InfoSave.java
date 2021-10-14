@@ -36,13 +36,13 @@ public class InfoSave
 			Statement statement = bankConnection.createStatement();
 			String selectSQL = "SELECT accountFunds "
 					+          "FROM user_accounts"
-					+          "WHERE userID = " + ID;
+					+          "WHERE userID = " + ID + ";";
 			ResultSet resultSelect = statement.executeQuery(selectSQL);
 			
 			int remainingMoney = resultSelect.getInt(0) - takeOut;
 			String updateSQL = "UPDATE TABLE user_accounts "
 					+          "SET accountFunds = " + remainingMoney
-					+          "WHERE accountID = " + account;
+					+          "WHERE accountID = " + account + ";";
 			ResultSet remainingFunds = statement.executeQuery(updateSQL);
 			
 			System.out.println("You have " +  remainingFunds.getInt(0) + " left in your account.");
@@ -56,13 +56,13 @@ public class InfoSave
 			Statement statement = bankConnection.createStatement();
 			String selectSQL = "SELECT accountFunds "
 					+          "FROM user_accounts"
-					+          "WHERE userID = " + ID;
+					+          "WHERE userID = " + ID + ";";
 			ResultSet resultSelect = statement.executeQuery(selectSQL);
 			
 			int remainingMoney = resultSelect.getInt(0) + putIn;
 			String updateSQL = "UPDATE TABLE user_accounts "
 					+          "SET accountFunds = " + remainingMoney
-					+          "WHERE accountID = " + account;
+					+          "WHERE accountID = " + account + ";";
 			ResultSet remainingFunds = statement.executeQuery(updateSQL);
 			
 			System.out.println("You have " +  remainingFunds.getInt(0) + " left in your account.");
@@ -76,7 +76,7 @@ public class InfoSave
 			
 			String updateSQL = "UPDATE TABLE user_info "
 					+          "SET username = " + newName 
-					+          "WHERE userID = " + ID;
+					+          "WHERE userID = " + ID + ";";
 			Statement statement = bankConnection.createStatement();
 			statement.executeQuery(updateSQL);
 			
@@ -91,7 +91,7 @@ public class InfoSave
 			
 			String updateSQL = "UPDATE TABLE user_info "
 					+          "SET encryptedpassword = " + newPass 
-					+          "WHERE userID = " + ID;
+					+          "WHERE userID = " + ID + ";";
 			Statement statement = bankConnection.createStatement();
 			statement.executeQuery(updateSQL);
 			
@@ -106,7 +106,7 @@ public class InfoSave
 			
 			String updateSQL = "UPDATE TABLE user_accounts "
 					+          "SET validUserID = " + validity
-					+          "WHERE userID = " + ID;
+					+          "WHERE userID = " + ID + ";";
 			Statement statement = bankConnection.createStatement();
 			statement.executeQuery(updateSQL);
 			
@@ -121,7 +121,7 @@ public class InfoSave
 			
 			String updateSQL = "UPDATE TABLE bank_staff_accounts "
 					+          "SET bankEmployeeID = " + eID
-					+          "WHERE userID = " + ID;
+					+          "WHERE userID = " + ID + ";";
 			Statement statement = bankConnection.createStatement();
 			statement.executeQuery(updateSQL);
 			
@@ -136,7 +136,7 @@ public class InfoSave
 			
 			String updateSQL = "UPDATE TABLE bank_staff_accounts "
 					+          "SET bankAdminID = " + eID
-					+          "WHERE userID = " + ID;
+					+          "WHERE userID = " + ID + ";";
 			Statement statement = bankConnection.createStatement();
 			statement.executeQuery(updateSQL);
 			

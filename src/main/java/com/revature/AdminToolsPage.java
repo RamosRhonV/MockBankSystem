@@ -15,7 +15,7 @@ public class AdminToolsPage implements PresentingPage
 	public void presentPage()
 	{
 		System.out.println("Presenting AdminTools page...");
-		new BankMainPage().userActions();
+		userActions();
 	}
 
 	// "hub area" for bank administrators

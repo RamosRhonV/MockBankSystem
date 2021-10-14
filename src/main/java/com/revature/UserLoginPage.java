@@ -77,8 +77,6 @@ public class UserLoginPage implements PresentingPage
 			encryptedPass += selectedChar;
 		}
 		
-		System.out.println(encryptedPass);
-		
 		return encryptedPass;
 	}
 	
