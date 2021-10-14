@@ -143,4 +143,20 @@ public class InfoSave
 			System.out.println("Validity changed!");
 		}
 	}
+	
+	public void deleteUser(String ID) throws SQLException
+	{
+		try(Connection bankConnection = BankDatabaseConnectionUtil.getConnection())
+		{
+			
+			String deleteSQL = "DELETE FROM user_info WHERE userID = "           + ID + ";" +
+							   "DELETE FROM user_accounts WHERE userID = "       + ID + ";" +
+							   "DELETE FROM bank_staff_accounts WHERE userID = " + ID + ";";
+
+			Statement statement = bankConnection.createStatement();
+			statement.executeQuery(deleteSQL);
+			
+			System.out.println("User deleted.");
+		}	
+	}
 }

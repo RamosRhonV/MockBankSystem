@@ -5,6 +5,13 @@ import java.util.Scanner;
 
 import com.revature.utils.BankLoggingUtil;
 
+/**
+ * Presents the tools provided for employees of the banking app
+ * 
+ * @author Rhon Vincent Ramos
+ *
+ */
+
 public class EmployeeToolsPage implements PresentingPage
 {
 	public void presentPage()
@@ -13,6 +20,8 @@ public class EmployeeToolsPage implements PresentingPage
 		new BankMainPage().userActions();
 	}
 	
+	// "hub area" for employee tools
+	// only one service unique to employees provided
 	public void userActions()
 	{
 		new BankLoggingUtil();
@@ -62,6 +71,8 @@ public class EmployeeToolsPage implements PresentingPage
 		}
 	}
 	
+	// changes the "validity" of a bank customer
+	// "validity" on an account is its ability to use provided services
 	public void changeValidity() throws SQLException
 	{
 		new BankLoggingUtil();

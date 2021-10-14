@@ -5,6 +5,13 @@ import java.util.Scanner;
 
 import com.revature.utils.BankLoggingUtil;
 
+/**
+ * Presents the services required for manipulating the user's own account.
+ * 
+ * @author Rhon Vincent Ramos
+ *
+ */
+
 public class AccountInfoPage implements PresentingPage
 {
 	public void presentPage()
@@ -14,6 +21,7 @@ public class AccountInfoPage implements PresentingPage
 		new BankMainPage().userActions();
 	}
 
+	// "hub area" for the account management page
 	public void userActions()
 	{
 		new BankLoggingUtil();
@@ -46,6 +54,7 @@ public class AccountInfoPage implements PresentingPage
 		}
 	}
 	
+	// checks user's input and provides the correct service
 	public void goToAction(char code)
 	{	
 		try
@@ -65,6 +74,7 @@ public class AccountInfoPage implements PresentingPage
 		}
 	}
 	
+	// allows the user to change their name in the database
 	public void changeName ()
 	{
 		new BankLoggingUtil();
@@ -87,6 +97,8 @@ public class AccountInfoPage implements PresentingPage
 		userActions();
 	}
 
+	// allows the user to change their password
+	// the password is encrypted before being stored in the database
 	public void changePass () throws SQLException
 	{
 		new BankLoggingUtil();

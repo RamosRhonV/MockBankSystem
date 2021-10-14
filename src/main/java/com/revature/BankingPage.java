@@ -5,6 +5,14 @@ import java.util.Scanner;
 
 import com.revature.utils.BankLoggingUtil;
 
+/**
+ * Presents the banking aspect of the banking app
+ * Allows users to withdraw or deposit "funds" from a selected bank account
+ * 
+ * @author Rhon Vincent Ramos
+ *
+ */
+
 public class BankingPage implements PresentingPage
 {
 	public void presentPage()
@@ -13,6 +21,8 @@ public class BankingPage implements PresentingPage
 		userActions();
 	}
 
+	// "hub area" within the banking service
+	// allows withdrawal or depositing of "funds"
 	public void userActions()
 	{
 		new BankLoggingUtil();
@@ -52,6 +62,7 @@ public class BankingPage implements PresentingPage
 		}
 	}
 	
+	// checks user's input then sends them to correct service
 	public void goToAction(char code) throws SQLException
 	{	
 		switch(code)
@@ -64,6 +75,7 @@ public class BankingPage implements PresentingPage
 		}
 	}
 	
+	// withdraws the "money" from an account selected by user
 	public void withdrawMoney() throws SQLException
 	{
 		new BankLoggingUtil();
@@ -94,6 +106,7 @@ public class BankingPage implements PresentingPage
 		userActions();
 	}
 	
+	// deposits "money" into an account selected by user
 	public void depositMoney() throws SQLException
 	{
 		new BankLoggingUtil();

@@ -24,6 +24,7 @@ public class BankMainPage implements PresentingPage
 	}
 	
 	// "hub area" where the user returns to after using a service
+	// presents choice of services based on user tier
 	public void userActions()
 	{
 		new BankLoggingUtil();

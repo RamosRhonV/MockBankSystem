@@ -1,6 +1,11 @@
 package com.revature;
 
 import java.sql.SQLException;
+
+/**
+ * Presents the tools provided for admins of the bank application
+ */
+
 import java.util.Scanner;
 
 import com.revature.utils.BankLoggingUtil;
@@ -13,6 +18,7 @@ public class AdminToolsPage implements PresentingPage
 		new BankMainPage().userActions();
 	}
 
+	// "hub area" for bank administrators
 	public void userActions()
 	{
 		new BankLoggingUtil();
@@ -45,6 +51,7 @@ public class AdminToolsPage implements PresentingPage
 		}
 	}
 	
+	// checks user's choice then provides the correct tool
 	public void goToAction(char code)
 	{	
 		try
@@ -54,9 +61,9 @@ public class AdminToolsPage implements PresentingPage
 				case 'A':
 				case 'a': changeEmployeeID(); break;
 				case 'B':
-				case 'b': break;
+				case 'b': changeAdminID(); break;
 				case 'C':
-				case 'c': break;
+				case 'c': deleteUser(); break;
 				default: System.out.println("Unrecognized action. Try again"); userActions();
 			}
 		}
@@ -66,6 +73,7 @@ public class AdminToolsPage implements PresentingPage
 		}
 	}
 	
+	// allows admins to add, change, or remove an employee's ID
 	public void changeEmployeeID() throws SQLException
 	{		
 		new BankLoggingUtil();
@@ -90,6 +98,7 @@ public class AdminToolsPage implements PresentingPage
 		userActions();
 	}
 	
+	// allows admins to add, change, or remove an admin's ID
 	public void changeAdminID() throws SQLException
 	{		
 		new BankLoggingUtil();
@@ -104,6 +113,29 @@ public class AdminToolsPage implements PresentingPage
 			System.out.print("Change this user's admin ID (or input nothing to remove their admin status). -> ");
 			int newID = userInput.nextInt();
 			new InfoSave().changeAdminStatus(userID, newID);
+		} 
+		catch (NumberFormatException nf) 
+		{
+			System.out.println("Unrecognized ID. Try again...");
+			changeEmployeeID();
+		}
+		
+		userActions();
+	}
+
+	// allows the deletion of a user's records in the database
+	public void deleteUser() throws SQLException
+	{		
+		new BankLoggingUtil();
+		BankLoggingUtil.bankLogger.info("In delete user...");	
+		
+		System.out.print("Delete which user's ID. -> ");
+		Scanner userInput = new Scanner(System.in);
+		try 
+		{
+			String userID = userInput.nextLine();
+			System.out.println("User selected. Deleting...");
+			new InfoSave().deleteUser(userID);
 		} 
 		catch (NumberFormatException nf) 
 		{
