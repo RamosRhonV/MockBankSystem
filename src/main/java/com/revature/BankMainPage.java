@@ -79,7 +79,7 @@ public class BankMainPage implements PresentingPage
 			case 'C':
 			case 'c': new BankingPage().presentPage(); break; 
 			case 'D':
-			case 'd': new EmployeeToolsPage().presentPage(); break;
+			case 'd': new AccountInfoPage().presentPage(); break;
 			default: System.out.println("Unrecognized action. Try again"); userActions();
 		}
 	}

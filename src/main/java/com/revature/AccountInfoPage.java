@@ -27,7 +27,7 @@ public class AccountInfoPage implements PresentingPage
 		new BankLoggingUtil();
 		BankLoggingUtil.bankLogger.info("In account page userActions...");
 		
-		System.out.println("Are you here to change username (A), change password (B), or change tier (C) (or enter nothing to return to main page)? -> ");
+		System.out.println("Are you here to change username (A) or change password (B) (or enter nothing to return to main page)? -> ");
 		
 		Scanner userInput = new Scanner(System.in);
 		String userChoice = "";

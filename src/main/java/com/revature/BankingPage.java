@@ -102,8 +102,10 @@ public class BankingPage implements PresentingPage
 			System.out.println("Unrecognized value. Try again...");
 			withdrawMoney();
 		}
-		
-		userActions();
+		finally
+		{
+			userActions();
+		}
 	}
 	
 	// deposits "money" into an account selected by user
@@ -133,7 +135,9 @@ public class BankingPage implements PresentingPage
 			System.out.println("Unrecognized value. Try again...");
 			depositMoney();
 		}
-		
-		userActions();
+		finally
+		{
+			userActions();
+		}
 	}
 }

@@ -94,8 +94,10 @@ public class AdminToolsPage implements PresentingPage
 			System.out.println("Unrecognized ID. Try again...");
 			changeEmployeeID();
 		}
-		
-		userActions();
+		finally
+		{
+			userActions();
+		}
 	}
 	
 	// allows admins to add, change, or remove an admin's ID
@@ -119,8 +121,10 @@ public class AdminToolsPage implements PresentingPage
 			System.out.println("Unrecognized ID. Try again...");
 			changeEmployeeID();
 		}
-		
-		userActions();
+		finally
+		{
+			userActions();
+		}
 	}
 
 	// allows the deletion of a user's records in the database
@@ -142,7 +146,9 @@ public class AdminToolsPage implements PresentingPage
 			System.out.println("Unrecognized ID. Try again...");
 			changeEmployeeID();
 		}
-		
-		userActions();
+		finally
+		{
+			userActions();
+		}
 	}
 }

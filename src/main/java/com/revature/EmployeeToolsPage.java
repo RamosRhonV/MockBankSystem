@@ -93,7 +93,9 @@ public class EmployeeToolsPage implements PresentingPage
 			System.out.println("Unrecognized ID. Try again...");
 			changeValidity();
 		}
-		
-		userActions();
+		finally
+		{
+			userActions();
+		}
 	}
 }
