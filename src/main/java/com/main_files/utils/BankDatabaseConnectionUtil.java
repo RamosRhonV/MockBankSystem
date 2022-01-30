@@ -24,9 +24,9 @@ public class BankDatabaseConnectionUtil
 			ce.printStackTrace();
 		}
 		
-		String url = "jdbc:postgresql://ramosrhonrevdb.cqsrp1lrgf2o.us-east-1.rds.amazonaws.com:5432/RamosRhonBingusDB";
-		String username = "RamosSuper";
-		String password = "[password][drowssap]"; // password for the database. please do not use for nefarious purposes :(
+		String url = "";
+		String username = "";
+		String password = ""; // password for the database. please do not use for nefarious purposes :(
 		
 		return DriverManager.getConnection(url, username, password);
 	}
